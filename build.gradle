@@ -53,8 +53,20 @@ dependencies {
 }
 
 test {
-    testLogging.showStandardStreams = true
-    systemProperties System.getProperties()
+    maxParallelForks = Runtime.runtime.availableProcessors()
+    systemProperty "file.encoding", "utf-8"
+    systemProperty "cucumber.options", System.getProperty("cucumber.options")
+    systemProperty "cucumber.filter.tags", System.getProperty("cucumber.filter.tags")
+    systemProperty "environment", System.getenv("environment")
+    systemProperty "webdriver.driver", System.getProperty("webdriver.driver")
+    systemProperty "webdriver.chrome.driver", System.getProperty("webdriver.chrome.driver")
+    systemProperty "webdriver.remote.url", System.getProperty("webdriver.remote.url")
+    systemProperty "webdriver.remote.driver", System.getProperty("webdriver.remote.driver")
+    systemProperty "webdriver.remote.os", System.getProperty("webdriver.remote.os")
+}
+
+tasks.withType(Test) {
+    maxParallelForks = Runtime.runtime.availableProcessors()
 }
 gradle.startParameter.continueOnFailure = true
 
