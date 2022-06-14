@@ -6,6 +6,7 @@ import co.com.segVidaDigital.screenplay.question.TextValidCompra;
 import co.com.segVidaDigital.screenplay.question.TextValidDatos;
 import co.com.segVidaDigital.screenplay.question.TextValidHome;
 import co.com.segVidaDigital.screenplay.task.Abrir;
+import co.com.segVidaDigital.screenplay.task.ConfiguracionVideoReportes;
 import co.com.segVidaDigital.screenplay.task.DatosPersonalesFrmTask;
 import co.com.segVidaDigital.screenplay.task.PreguntasSaludTask;
 import io.cucumber.java.Before;
@@ -28,6 +29,7 @@ public class StepSeguroVidaDigital {
 
     @Dado("el usuario ingresa a la pagina web para la compra del seguro de vida digital")
     public void elUsuarioIngresaALaPaginaWebParaLaCompraDelSeguroDeVidaDigital() {
+        theActorCalled(Constant.MR_ROBOT).attemptsTo(ConfiguracionVideoReportes.grabandoPrueba());
         theActorCalled(Constant.MR_ROBOT).attemptsTo(Abrir.navegadorWebURL());
         theActorInTheSpotlight().should(seeThat(TextValidHome.paginaDeSegurosVidaDigital()));
         theActorCalled(Constant.MR_ROBOT).attemptsTo(Interacciones.clicBotonComprar());

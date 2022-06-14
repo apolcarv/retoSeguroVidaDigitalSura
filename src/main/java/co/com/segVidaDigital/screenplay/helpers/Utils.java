@@ -3,6 +3,8 @@ package co.com.segVidaDigital.screenplay.helpers;
 import com.github.javafaker.Faker;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import org.openqa.selenium.By;
+
+import java.io.File;
 import java.util.*;
 import static co.com.segVidaDigital.screenplay.helpers.Constant.*;
 import static co.com.segVidaDigital.screenplay.helpers.WebActions.click;
@@ -100,8 +102,6 @@ public class Utils {
             BrowseTheWeb.as(theActorInTheSpotlight()).getDriver().findElement(By.xpath(xpathRandomMes)).click();
         }
     }
-
-
 
 
 }

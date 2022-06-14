@@ -3,6 +3,8 @@ package co.com.segVidaDigital.screenplay.helpers;
 import com.github.javafaker.Faker;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.Random;
 
@@ -23,6 +25,13 @@ public class Date {
     public static int obtenerYearPersonaAdulta() {
         int yearActualMenos19 = yearRamdon - Constant.YEAR_A_RESTAR;
         return yearActualMenos19;
+    }
+
+    public static String obtenerFechaActualConHorasMinutosSegudosFormateada(){
+        LocalDateTime dateFormatted = LocalDateTime.now();
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy-HH-mm-ss");
+         String formattedDate = dateFormatted.format(myFormatObj);
+        return formattedDate;
     }
 
 
