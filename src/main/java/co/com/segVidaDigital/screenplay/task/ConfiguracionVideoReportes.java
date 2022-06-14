@@ -51,7 +51,9 @@ public class ConfiguracionVideoReportes implements Task {
  * ->  ffmpeg -y -rtbufsize 100M -f gdigrab -t 00:00:30 -framerate 30 -probesize 10M -draw_mouse 1 -i desktop -c:v libx264 -r 30 -preset ultrafast -tune zerolatency -crf 25 -pix_fmt yuv420p reporteGrabacionesdePruebas.mp4
  * 6- una vez ya puesto la ruta damos enter para que la consola ejecute esto tomara unos segundos depende de la velocidad de la carpeta y al finalizar la ejeucion sin
  algun error ya podremos configurar en nuestra clase atravez de codigo para que el proceso se vuelva automatico,
- --- IMPORTANTE Es importante que la maquina no este conectada a una segunda o tercera pantalla porque nos saldra un error por el acho y largo
+ --- IMPORTANTE Es importante que la maquina no este conectada a una segunda o tercera pantalla porque nos saldra un error por el acho y largo, Como tambien cuando este
+     Se este ejecutando la prueba, ya que la herramienta tiene un limite de cuanto pueden abarcar en alto y acho del video, FUNCIONA si tienes una segunda pantalla pequeña conectada
+     apartir de la tercera pantalla conectana , esta graba y guarda pero al ejecutar y ver el video que esta dentro de la carpeta este no reproduce.
  *  7- El ultimo paso es crear la clase y los metodos donde el robot ejecutara y activira la grabacion y por ultimo esta quedara en una carpeta
  de preferencia que nosotros mismos programemos
  *************************
